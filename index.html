@@ -35,7 +35,38 @@
                 </div>
             </div>
 
+            <section class="hero">
+                <form class="form">
+                    <fieldset class="form__content">
+                        <div class="form__campo">
+                            <label class="form__label" for="ubicacion">Ubicacion</label>
+                            <input id="ubicacion" class="form__input" type="text" placeholder="¿A donde viajas?">
+                        </div>
+                        <div class="form__campo">
+                            <label class="form__label" for="llegada">Llegada</label>
+                            <input id="llegada" class="form__input" type="date">
+                        </div>
+                        <div class="form__campo">
+                            <label class="form__label" for="salida">Salida</label>
+                            <input id="salida" class="form__input" type="date">
+                        </div>
+    
+                        <div class="form__campo">
+                            <label class="form__label" for="huespedes">Huéspedes</label>
+                            <input id="huespedes" class="form__input" type="number" min="0" placeholder="¿Cuántos?">
+                        </div>
+                        <div class="form__campo">
+                            <input class="form__btn" type="button" value="Buscar">
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="busqueda">
+                    <h2 class="busqueda__title">No sabes a donde ir</h2>
+                    <a class="busqueda__btn" href="#">Busqueda flexible</a>
+                </div>
+            </section>
         </div>
     </header>
+    <script src="./build/js/imagenes.js"></script>
 </body>
 </html>
