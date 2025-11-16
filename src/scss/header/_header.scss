@@ -14,25 +14,35 @@
 }
 
 .header {
-    padding: 2.5rem 0;
-    background-position: center top;
+    padding: 3rem 0 20rem;
+    font-family: sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include m.tablet { 
+        padding: 3rem 0 20rem;
+    }
     &__menu {
         display: none;
-        @include m.tablet {
+        @include m.tablet { 
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
+        
         p {
             color: v.$blanco;
+            font-size: 1.6rem;
             margin: 0;
-            font-weight: 300;
         }
-
-
     }
-    &__logo,
-    &__anfitrion {
-        
+
+    &__logo {
+        p {
+            font-size: 2rem;
+        }
     }
 
     &__anfitrion {
@@ -43,11 +53,11 @@
 .menu {
     ul {
         display: flex;
-        flex-direction: row;
-        gap: 3rem;
+        gap: 4rem;
         margin: 0;
-        li {
-            margin: 0;
+
+        p {
+            font-size: 1.6rem;
         }
     }
 }
