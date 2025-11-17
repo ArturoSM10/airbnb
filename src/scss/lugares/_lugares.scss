@@ -1,0 +1,43 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.lugar {
+    padding: 2rem 0;
+    &__title {
+        margin: 2rem 0;
+        font-weight: 600;
+        font-size: 3.2rem;
+        line-height: 1.5;
+    }
+
+    &__cards {
+        @include m.grid(4, 4rem);
+        word-wrap: break-word;
+        overflow-y: scroll;
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+            word-wrap: none;
+        } 
+
+        @include m.desktop {
+            @include m.grid(4, 2rem);
+            word-wrap: none;
+        } 
+        .card {
+            width: 30rem;
+            @include m.tablet {
+                width: auto;
+            } 
+            &__img {
+                width: 100%;
+                border-radius: 1rem;
+             }
+
+            &__p {
+                font-size: 1.8rem;
+             }
+
+        }
+    }
+}
