@@ -1,0 +1,114 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.avif .anfitrion {
+    background-image: url('../img/anfitrion.avif');
+    @include m.tablet {
+        background-image: linear-gradient(to right, v.$negro 0, v.$negro 45%, transparent 55%), url('../img/anfitrion.avif');
+    }
+}
+
+.webp.notavif .anfitrion {
+    background-image: url('../img/anfitrion.webp');
+    @include m.tablet {
+        background-image: linear-gradient(to right, v.$negro 0, v.$negro 45%, transparent 55%), url('../img/anfitrion.webp');
+    }
+}
+
+.notwebp.notavif .anfitrion {
+    background-image: url('../img/anfitrion.jpg');
+    @include m.tablet {
+        background-image: linear-gradient(to right, v.$negro 0, v.$negro 45%, transparent 55%), url('../img/anfitrion.jpg');
+    }
+}
+
+.anfitrion {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row: 2/3;
+    background-size: 110%;
+    background-position: 25% 67%;
+    background-repeat: no-repeat;
+
+    @media (min-width: 400px) {
+        background-position: 25% 76%;
+    }
+
+    @media (min-width: 450px) {
+        background-position: 25% 85%;
+    }
+
+    @media (min-width: 500px) {
+        background-position: 25% 115%;
+    }
+
+    @media (min-width: 600px) {
+        background-position: 25% 157%;
+    }
+
+    @media (min-width: 700px) {
+        background-position: 25% 240%;
+    }
+
+    @include m.tablet {
+        grid-template-rows: unset;
+        background-position: 100%, 0 10%;
+        background-size: cover, 115% 100%;
+        padding: 15rem 5rem;
+    }
+    
+    @media (min-width: 840px) {
+        background-position: 100%, -100% 10%;
+        background-size: cover, 105% 100%;
+    }
+
+    @media (min-width: 928px) {
+        background-position: 100%, -150% 70%;
+        background-size: cover, 105% 115%;
+    }
+
+    @include m.desktop {
+        background-position: 100%, 50px 30%;
+        background-size: cover, 100% auto;
+    }
+
+    &__info {
+        grid-row: 1/2;
+        background-color: v.$negro;
+        padding: 5rem;
+        @include m.tablet {
+            background-color: unset;
+            grid-row: auto;
+            padding: 0;
+            max-width: 50%;
+        }
+        
+    }
+    &__title {
+        color: v.$blanco;
+        font-size: 3.2rem;
+        margin: 2rem 0;
+        line-height: 1.5;
+    }
+
+    &__p {
+        color: v.$blanco;
+        font-size: 2rem;
+    }
+    &__btn {
+        display: inline-block;
+        color: v.$negro;
+        background-color: v.$primario;
+        padding: 1rem 5rem;
+        font-weight: 900;
+        border-radius: 1rem;
+        text-align: center;
+        width: 100%;
+        font-size: 2rem;
+        margin-top: 1rem;
+        @include m.tablet {
+            width: auto;
+            padding: 1rem 4rem;
+        }
+    }
+}
