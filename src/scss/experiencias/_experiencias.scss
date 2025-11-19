@@ -1,0 +1,36 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.experiencias {
+    padding: 2rem 0;
+    &__title {
+        font-size: 3.2rem;
+        text-transform: capitalize;
+    }
+    &__p {
+        font-size: 2rem;
+    }
+    &__card {
+        display: grid;
+        grid-template-columns: repeat(3, 30rem);
+        gap: 2rem;
+        overflow-x: scroll;
+
+        @include m.tablet {
+            @include m.grid(3, 2rem);
+        }
+        .card {
+            &__img {
+                border-radius: 1rem;
+            }
+
+            &__title {
+                font-size: 2rem;
+            }
+
+            &__p {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
